@@ -1,4 +1,4 @@
-export const BREADS = [
+export const BAGS = [
   {
     id: '1',
     category: '1',

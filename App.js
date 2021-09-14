@@ -1,7 +1,9 @@
-import React from 'react';
-import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import BagNavigator from './navigation/BagNavigator';
+import{ Provider } from 'react-redux';
+import React from 'react';
+import store from './store';
+import { useFonts } from 'expo-font';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -12,6 +14,8 @@ export default function App() {
   if (!fontsLoaded) return <AppLoading />;
 
   return (
-    <BagNavigator />
+    <Provider store={store}>
+      <BagNavigator />
+    </Provider>
   );
 }
